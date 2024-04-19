@@ -4,4 +4,9 @@
 .idea
 .idea/
 
-git_aliases_hint
+app/__pycache__
+app/__pycache__/*
+app/__pycache__/views.cpython-311.pyc
+
+
+docs/git_aliases_hint
