@@ -8,10 +8,19 @@ def index():
     return render_template("index.html")
 
 
-@app.route('/tasks/<string:task_id>')
-def task(task_id: str):
-    print(task_id)
-    return render_template(f"tasks{task_id}.html")
+@app.route('/tasks/1')
+def task1():
+    return render_template("task1.html")
+
+
+@app.route('/tasks/2')
+def task2():
+    return render_template("task2.html")
+
+
+@app.route('/tasks/3')
+def task3():
+    return render_template("task3.html")
 
 
 @app.route('/tasks')
