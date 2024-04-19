@@ -8,6 +8,12 @@ def index():
     return render_template("index.html")
 
 
+@app.route('/tasks/<string:task_id>')
+def task(task_id: str):
+    print(task_id)
+    return render_template(f"tasks{task_id}.html")
+
+
 @app.route('/tasks')
 def tasks():
     return render_template("tasks.html")
@@ -21,4 +27,6 @@ def about():
 @app.route('/contact')
 def contact():
     return render_template("contact.html")
+
+
 
