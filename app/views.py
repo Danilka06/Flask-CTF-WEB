@@ -1,5 +1,6 @@
 from app import app
-from flask import render_template
+from flask import render_template, request, jsonify
+import json
 
 
 @app.route('/')
@@ -37,5 +38,13 @@ def about():
 def contact():
     return render_template("contact.html")
 
+
+@app.route('/api/check', methods=["GET", "POST"])
+def api_check():
+    if request.method == "POST":
+        referrer = request.referrer
+        json_data = request.json
+        print(referrer, json_data)
+    return json.dumps({'success': True}), 200, {'ContentType': 'application/json'}
 
 
