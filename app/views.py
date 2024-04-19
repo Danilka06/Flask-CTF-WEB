@@ -46,13 +46,35 @@ def page_contact():
     return render_template("contact.html", url=URL)
 
 
+@app.route('/robots.txt')
+def page_robots():
+    f = open("app/robots.txt", 'r')
+    data = f.read()
+    f.close()
+    return data
+
+
+@app.route('/shit_happens')
+def page_shit_happens():
+    return render_template("shit_happens.html", url=URL)
+
+
 @app.route('/api/check', methods=["GET", "POST"])
 def page_api_check():
+    codes = {
+        200: "correct",
+        300: "incorrect",
+        400: "error"
+    }
+    status = "error"
     if request.method == "POST":
         check = api_check(request.referrer, request.json, CONFIG)
-        referrer = request.referrer
-        json_data = request.json
-        print(referrer, json_data)
-    return json.dumps({'success': True}), 200, {'ContentType': 'application/json'}
+        status = codes[check]
 
+    return json.dumps({'status': status}), 200, {'ContentType': 'application/json'}
+
+
+@app.route('/amogus')
+def page_amogus():
+    return CONFIG["tasks"]['2']['answer']
 
