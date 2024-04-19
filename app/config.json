@@ -1,0 +1,32 @@
+{
+  "url": "http://127.0.0.1:5000/",
+  "users": [
+    {
+      "login": "daneek",
+      "password": "real",
+      "score": 21,
+      "is_Admin": false
+    },
+    {
+      "login": "root",
+      "password": "nereal",
+      "score": 12345,
+      "is_Admin": true
+    }
+  ],
+
+  "tasks": {
+    "1": {
+      "task_id": "1",
+      "answer": "amogus"
+    },
+    "2": {
+      "task_id": "2",
+      "answer": "sus"
+    },
+    "3": {
+      "task_id": "3",
+      "answer": "lol"
+    }
+  }
+}

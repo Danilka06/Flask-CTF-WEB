@@ -20,15 +20,19 @@
             <button class="toggle-btn">Toggle Sidebar</button>
             <nav>
                 <ul>
-                    <li onclick="location.href='http://127.0.0.1:5000/';">Home</li>
-                    <li onclick="location.href='http://127.0.0.1:5000/tasks';">Tasks</li>
-                    <li onclick="location.href='http://127.0.0.1:5000/about';">About</li>
-                    <li onclick="location.href='http://127.0.0.1:5000/contact';">Contact</li>
+                    <li onclick="location.href='{{url}}';">Home</li>
+                    <li onclick="location.href='{{url}}tasks';">Tasks</li>
+                    <li onclick="location.href='{{url}}about';">About</li>
+                    <li onclick="location.href='{{url}}contact';">Contact</li>
                 </ul>
             </nav>
         </aside>
         <main>
-            <h1>Task3</h1>
+            <h1>Task 3</h1>
+            <p>What do You know about robots?</p>
+            <input type="text" id="answer">
+            <p id="response_text"></p>
+            <button id="submit">Submit</button>
         </main>
     </div>
     <script src="../static/js/scripts.js"></script>

@@ -20,18 +20,18 @@
             <button class="toggle-btn">Toggle Sidebar</button>
             <nav>
                 <ul>
-                    <li onclick="location.href='http://127.0.0.1:5000/';">Home</li>
-                    <li onclick="location.href='http://127.0.0.1:5000/tasks';">Tasks</li>
-                    <li onclick="location.href='http://127.0.0.1:5000/about';">About</li>
-                    <li onclick="location.href='http://127.0.0.1:5000/contact';">Contact</li>
+                    <li onclick="location.href='{{url}}';">Home</li>
+                    <li onclick="location.href='{{url}}tasks';">Tasks</li>
+                    <li onclick="location.href='{{url}}about';">About</li>
+                    <li onclick="location.href='{{url}}contact';">Contact</li>
                 </ul>
             </nav>
         </aside>
         <main>
             <ul>
-                <li><a href="http://127.0.0.1:5000/tasks/1">Task 1</a></li>
-                <li><a href="http://127.0.0.1:5000/tasks/2">Task 2</a></li>
-                <li><a href="http://127.0.0.1:5000/tasks/3">Task 3</a></li>
+                <li><a href="{{url}}tasks/1">Task 1</a></li>
+                <li><a href="{{url}}tasks/2">Task 2</a></li>
+                <li><a href="{{url}}tasks/3">Task 3</a></li>
             </ul>
         </main>
     </div>

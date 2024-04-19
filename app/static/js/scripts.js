@@ -17,7 +17,7 @@ button_submit.addEventListener('click', async _ => {
     {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({answer: answer_text.innerText})
+      body: JSON.stringify({answer: answer_text.value})
     });
     console.log('Completed!', response);
     if (response.status == 200) response_text.innerText = 'correct'

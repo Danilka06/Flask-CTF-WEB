@@ -2,46 +2,54 @@ from app import app
 from flask import render_template, request, jsonify
 import json
 
+from app.api_check import *
+
+with open('app/config.json', 'r') as file:
+    CONFIG = json.load(file)
+
+URL = CONFIG['url']
+
 
 @app.route('/')
 @app.route('/index')
 def index():
-    return render_template("index.html")
+    return render_template("index.html", url=URL)
 
 
 @app.route('/tasks/1')
-def task1():
-    return render_template("task1.html")
+def page_task1():
+    return render_template("task1.html", url=URL)
 
 
 @app.route('/tasks/2')
-def task2():
-    return render_template("task2.html")
+def page_task2():
+    return render_template("task2.html", url=URL)
 
 
 @app.route('/tasks/3')
-def task3():
-    return render_template("task3.html")
+def page_task3():
+    return render_template("task3.html", url=URL)
 
 
 @app.route('/tasks')
-def tasks():
-    return render_template("tasks.html")
+def page_tasks():
+    return render_template("tasks.html", url=URL)
 
 
 @app.route('/about')
-def about():
-    return render_template("about.html")
+def page_about():
+    return render_template("about.html", url=URL)
 
 
 @app.route('/contact')
-def contact():
-    return render_template("contact.html")
+def page_contact():
+    return render_template("contact.html", url=URL)
 
 
 @app.route('/api/check', methods=["GET", "POST"])
-def api_check():
+def page_api_check():
     if request.method == "POST":
+        check = api_check(request.referrer, request.json, CONFIG)
         referrer = request.referrer
         json_data = request.json
         print(referrer, json_data)
