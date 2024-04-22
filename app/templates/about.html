@@ -1,36 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CTF Learning Website</title>
-    <link rel="stylesheet" href="static/css/style.css">
-</head>
-<body>
-    <header>
-        <div class="top-bar">
-            <div class="profile-info">
-                <img src="profile-icon.png" alt="Profile Icon" class="profile-icon">
-                <span>Profile</span>
-            </div>
-        </div>
-    </header>
-    <div class="container">
-        <aside class="sidebar">
-            <button class="toggle-btn">Toggle Sidebar</button>
-            <nav>
-                <ul>
-                    <li onclick="location.href='{{url}}';">Home</li>
-                    <li onclick="location.href='{{url}}tasks';">Tasks</li>
-                    <li onclick="location.href='{{url}}about';">About</li>
-                    <li onclick="location.href='{{url}}contact';">Contact</li>
-                </ul>
-            </nav>
-        </aside>
-        <main>
-            <h3>btw don't look at design. I know its weird</h3>
-        </main>
-    </div>
-    <script src="static/js/scripts.js"></script>
-</body>
-</html>
+{% extends 'temp.html' %}
+
+
+{% block body %}
+<h3>btw don't look at design. I know its weird</h3>
+{% endblock %}

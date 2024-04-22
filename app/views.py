@@ -1,7 +1,8 @@
-from app import app
-from flask import render_template, request, jsonify
 import json
 
+from flask import render_template, request
+
+from app import app
 from app.api_check import *
 
 with open('app/config.json', 'r') as file:
