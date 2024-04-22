@@ -78,3 +78,13 @@ def page_api_check():
 def page_amogus():
     return CONFIG["tasks"]['2']['answer']
 
+
+@app.route('/login')
+def page_login():
+    return render_template('login.html', url=URL)
+
+
+@app.route('/signup')
+def page_signup():
+    return render_template('signup.html', url=URL)
+

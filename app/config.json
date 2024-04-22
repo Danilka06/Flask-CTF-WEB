@@ -1,19 +1,19 @@
 {
   "url": "http://127.0.0.1:5000/",
-  "users": [
-    {
+  "users": {
+    "0": {
       "login": "daneek",
       "password": "real",
       "score": 21,
       "is_Admin": false
     },
-    {
-      "login": "root",
-      "password": "nereal",
+    "1337": {
+      "login": "admin",
+      "password": "admin",
       "score": 12345,
       "is_Admin": true
     }
-  ],
+  },
 
   "tasks": {
     "1": {
