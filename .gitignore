@@ -10,5 +10,8 @@ app/__pycache__/*
 app/__pycache__/__init__.cpython-311.pyc
 app/__pycache__/views.cpython-311.pyc
 
+app/core/__pycache__
+app/core/__pycache__/
+app/core/__pycache__/*
 
 docs/git_aliases_hint

@@ -9,4 +9,4 @@ Welcome to CyberQuest, a fun and challenging CTF web project where you can test 
 
 ## Authors
 
- * [Danilka06] (https://github.com/Danilka06)
+ * [Danilka06](https://github.com/Danilka06)

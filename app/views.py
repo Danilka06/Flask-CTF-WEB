@@ -137,5 +137,3 @@ def page_api_signup():
 
     login_user(user)
     return json.dumps({'status': "ok"}), 200, {'ContentType': 'application/json'}
-
-
