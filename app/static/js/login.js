@@ -17,7 +17,7 @@ button_login.addEventListener('click', async _ => {
       })  // json with answer from input field
     })
     .then(response => response.json())
-    .then(data => (data["status"] == "correct") ? (window.location.replace("{{url}}")) : (error_field.innerText = data["status"]))
+    .then(data => (data["status"] == "correct") ? (window.location.replace("http://127.0.0.1:5000/")) : (error_field.innerText = data["status"]))
 
   // catching all errors
   } catch(err) {

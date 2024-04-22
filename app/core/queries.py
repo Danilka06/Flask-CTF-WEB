@@ -1,11 +1,4 @@
-"""
-Запросы к бд
-"""
-import datetime
-from typing import Type, List
-
 from sqlalchemy.orm.session import Session
-from sqlalchemy import and_
 
 from app.core.models import User
 from app.core import db_session

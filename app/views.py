@@ -5,8 +5,8 @@ from flask_login import login_required, login_user
 
 from app import app
 from app.api_check import *
-from app.api_login import *
 from app.core.models import User
+from app.core import queries
 
 with open('app/config.json', 'r') as file:
     CONFIG = json.load(file)
@@ -86,11 +86,6 @@ def page_api_check():
 
 @app.route('/api/login', methods=["POST"])
 def page_api_login():
-    codes = {
-        200: "correct",
-        300: "incorrect",
-        400: "error"
-    }
     data = request.json
     login = data["login"]
     password = data["password"]
@@ -106,8 +101,7 @@ def page_api_login():
 
     login_user(user, remember=True)
 
-
-    return json.dumps({'status': "ok", "message": "amogus"}), 200, {'ContentType': 'application/json'}
+    return json.dumps({'status': "ok"}), 200, {'ContentType': 'application/json'}
 
 
 @app.route('/amogus')
@@ -118,18 +112,30 @@ def page_amogus():
 
 @app.route('/login')
 def page_login():
-    return render_template('login.html')
+    return render_template('login.html', url=URL)
 
 
 @app.route('/signup')
 def page_signup():
-    user = User()
-    user.login = "amogus"
-
-    user.set_password("real")
-
-    queries.add_and_commit(User)
     return render_template('signup.html', url=URL)
 
+
+@app.route('/api/signup', methods=["POST"])
+def page_api_signup():
+    data = request.json
+    login = data["login"]
+    password = data["password"]
+
+    if queries.get_user_by_login(login):
+        return json.dumps({'status': "login is used"}), 300, {'ContentType': 'application/json'}
+
+    user = User()
+    user.login = login
+    user.set_password(password)
+
+    queries.add_and_commit(user)
+
+    login_user(user)
+    return json.dumps({'status': "ok"}), 200, {'ContentType': 'application/json'}
 
 

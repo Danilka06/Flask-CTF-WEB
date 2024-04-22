@@ -27,13 +27,13 @@
 
           <div class="inputBox">
 
-            <input type="text" required> <i>Username</i>
+            <input id="login" type="text" required> <i>Username</i>
 
           </div>
 
           <div class="inputBox">
 
-            <input type="password" required> <i>Password</i>
+            <input id="password" type="password" required> <i>Password</i>
 
           </div>
 
@@ -41,9 +41,13 @@
 
           </div>
 
+          <div>
+            <p id="error_field"></p>
+          </div>
+
           <div class="inputBox">
 
-            <input type="submit" value="Sign Up">
+            <input id="signup_button" type="submit" value="Sign Up">
 
           </div>
 
@@ -56,5 +60,7 @@
   </section> <!-- partial -->
 
 </body>
+
+<script src="http://127.0.0.1:5000/static/js/signup.js"></script>
 
 </html>
