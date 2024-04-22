@@ -14,3 +14,12 @@ class User(SqlAlchemyBase):
     points = Column(Integer, nullable=False, default=0)
     createdAt = Column(DateTime, default=datetime.datetime.now, nullable=False)
 
+    def set_password(self, password: str):
+        # TODO hash passwords
+        self.password = password
+        ...
+
+    def check_password(self, password: str) -> bool:
+        # TODO hash passwords
+        return self.password == password
+        ...

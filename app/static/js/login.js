@@ -1,23 +1,25 @@
-const button_login = document.getElementById('submit');
-const username_field = document.getElementById("username");
+console.log('123')
+const button_login = document.getElementById('login_button');
+const login_field = document.getElementById("login");
 const password_field = document.getElementById("password");
+const error_field = document.getElementById("error_field");
 
-button_submit.addEventListener('click', async _ => {
+button_login.addEventListener('click', async _ => {
   try {
     // creating request
-    fetch('http://127.0.0.1:5000/api/check',
+    fetch('http://127.0.0.1:5000/api/login',
     {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        username: username_field.value
-        password: password_field.value
+        login: login_field.value,
+        password: password_field.value,
       })  // json with answer from input field
     })
     .then(response => response.json())
-    .then(data => response_text.innerText = data["status"])
+    .then(data => (data["status"] == "correct") ? (window.location.replace("{{url}}")) : (error_field.innerText = data["status"]))
 
-  // catching all errorsd
+  // catching all errors
   } catch(err) {
     console.error(`Error: ${err}`);
   }

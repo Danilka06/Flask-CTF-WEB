@@ -22,12 +22,4 @@ def api_check(ref: str, json: dict, config):
             return 200
         return 300
 
-    if url.startswith('login'):
-        pass
 
-    if url.startswith('signup'):
-        pass
-
-
-def cookie_check(r):
-    r

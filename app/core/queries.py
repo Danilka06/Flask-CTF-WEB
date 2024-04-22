@@ -67,3 +67,13 @@ def commit(db: Session) -> None:
 def get_user_by_login(login: str, db: Session):
     return db.query(User).filter(User.login == login).first()
 
+
+@use_db
+def get_user_by_id(id: int, db: Session) -> User | None:
+    return db.query(User).filter(User.id == id).first()
+
+
+@use_db
+def get_password_by_login(login: str, db: Session) -> User | None:
+    return db.query(User).filter(User.login == login).first()
+
