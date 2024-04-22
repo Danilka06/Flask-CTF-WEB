@@ -82,6 +82,7 @@ def page_amogus():
 
 @app.route('/login')
 def page_login():
+
     return render_template('login.html', url=URL)
 
 
